@@ -1,0 +1,40 @@
+#Datos del problema
+set AVIONES := AV1 AV2 AV3 AV4 AV5; #Definimos nuestros aviones 
+set TARIFAS := 1 2 3; #Definimos las tarifas (1:Estandar, 2:Leisure, 3:Business)
+
+#Definimos el numero de asientos de cada avion
+param asientos :=
+    AV1 90
+    AV2 120
+    AV3 200
+    AV4 150
+    AV5 190;
+
+#Definimos la capacidad de equipaje en kg de cada avion
+param capacidad_equipaje :=
+    AV1 1700
+    AV2 2700
+    AV3 1300
+    AV4 1700
+    AV5 2000;
+
+#Definimos el precio de cada billete dependiendo de la tarifa
+param precio_billete :=
+    1 19
+    2 49
+    3 69;
+
+#Definimos el peso del equipaje que permite cada tarifa
+param peso_equipaje :=
+    1 1  
+    2 20 
+    3 40; 
+    
+#Definimos el minimo de billetes de la tarifa Leisure
+param min_billetes_leisure := 20;
+
+#Definimos el minimo de billetes de la tarifa Business
+param min_billetes_business := 10;
+
+end;
+

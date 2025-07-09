@@ -1,0 +1,47 @@
+#Datos del problema
+set AVIONES := AV1 AV2 AV3 AV4 AV5; #Definimos nuestros aviones
+set PISTAS := P1 P2 P3 P4; #Definimos nuestras pistas
+set SLOTS := 1 2 3 4 5 6; #Definimos nuestros slots de tiempo
+
+#Definimos la hora programada de llegada de cada avion en minutos, partimos desde 0 que son las 9:00, si tenemos un valor negativo se trata de los minutos anteriores a las 9:00
+param hora_programada_llegada :=
+    AV1 10,
+    AV2 -5,
+    AV3 40,
+    AV4 55,
+    AV5 70;
+
+#Definimos la hora limite de llegada de cada avion en minutos, partimos desde 0 que son las 9:00
+param hora_limite_llegada :=
+    AV1 75,
+    AV2 30,
+    AV3 60, 
+    AV4 75,
+    AV5 90;
+
+#Definimos el coste de retraso de cada avion por cada minuto que se retrase
+param coste_retraso :=
+    AV1 100,
+    AV2 200,
+    AV3 150,
+    AV4 250,
+    AV5 200;
+
+#Definimos el inicio de cada slot de tiempo en cada pista, partimos desde 0 que son las 9:00
+param hora_inicio_slot :=
+    P1 1 0, P1 2 15, P1 3 30, P1 4 45, P1 5 60, P1 6 75,
+    P2 1 0, P2 2 15, P2 3 30, P2 4 45, P2 5 60, P2 6 75,
+    P3 1 0, P3 2 15, P3 3 30, P3 4 45, P3 5 60, P3 6 75,
+    P4 1 0, P4 2 15, P4 3 30, P4 4 45, P4 5 60, P4 6 75;
+
+#Definimos la disponibilidad de cada pista en cada slot de tiempo, partimos desde 0 que son las 9:00
+param pista_disponible :=
+    P1 1 0, P1 2 0, P1 3 0, P1 4 0, P1 5 1, P1 6 1,
+    P2 1 0, P2 2 0, P2 3 1, P2 4 1, P2 5 0, P2 6 0,
+    P3 1 1, P3 2 1, P3 3 1, P3 4 0, P3 5 0, P3 6 1,
+    P4 1 1, P4 2 0, P4 3 0, P4 4 0, P4 5 1, P4 6 1;
+ 
+#Definimos el numero de slots que tenemos
+param num_slots := 6;
+
+end;
